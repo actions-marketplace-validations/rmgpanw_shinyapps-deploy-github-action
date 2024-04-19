@@ -56,8 +56,9 @@ if (!is.null(appFiles)) {
 
 # install packages from github
 if (!is.null(githubPackages)) {
+  githubToken <- required("INPUT_GITHUBTOKEN")
   githubPackages <- unlist(strsplit(githubPackages, ",", TRUE))
-  devtools::install_github(githubPackages)  
+  devtools::install_github(githubPackages, auth_token = githubToken)
 }
 
 # set up account

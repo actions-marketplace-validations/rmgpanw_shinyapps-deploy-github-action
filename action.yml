@@ -38,6 +38,9 @@ inputs:
   githubPackages:
     description: comma separated list of packages to be installed from github with `devtools::install_github()` e.g. `tidyverse/dplyr,tidyverse/purrr@dev`
     required: false
+  githubToken:
+    description: GitHub authentication token. See https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow
+    required: false
 runs:
   using: docker
   image: Dockerfile
