@@ -36,7 +36,7 @@ inputs:
     description: used to indicate that the app should be updated with latest information
     required: false
   githubPackages:
-    description: used to list packages to be installed from github with `devtools::install_github()`
+    description: comma separated list of packages to be installed from github with `devtools::install_github()` e.g. `tidyverse/dplyr,tidyverse/purrr@dev`
     required: false
 runs:
   using: docker
