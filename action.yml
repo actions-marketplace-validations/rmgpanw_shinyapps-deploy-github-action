@@ -35,6 +35,9 @@ inputs:
   forceUpdate:
     description: used to indicate that the app should be updated with latest information
     required: false
+  localPackage:
+    description: used to indicate that the repository is a R package and that his should be installed with `devtoos::install_local()`
+    required: false
 runs:
   using: docker
   image: Dockerfile
