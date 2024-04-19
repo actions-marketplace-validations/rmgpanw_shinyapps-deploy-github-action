@@ -47,16 +47,17 @@ appFileManifest <- optional("INPUT_APPFILEMANIFEST")
 appTitle <- optional("INPUT_APPTITLE")
 logLevel <- optional("INPUT_LOGLEVEL")
 forceUpdate <- optional("INPUT_FORCEUPDATE")
-localPackage <- optional("INPUT_LOCALPACKAGE")
+githubPackages <- optional("INPUT_GITHUBPACKAGES")
 
 # process appFiles
 if (!is.null(appFiles)) {
   appFiles <- unlist(strsplit(appFiles, ",", TRUE))
 }
 
-# install repository if this is a package
-if (!is.null(localPackage)) {
-  devtools::install_local()  
+# install packages from github
+if (!is.null(githubPackages)) {
+  githubPackages <- unlist(strsplit(githubPackages, ",", TRUE))
+  devtools::install_github(githubPackages)  
 }
 
 # set up account
